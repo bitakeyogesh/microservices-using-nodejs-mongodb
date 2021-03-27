@@ -54,3 +54,5 @@ A basic application to demonstrate the microservices architecture using books st
 | USERS_API_DATABASE_NAME|Name of the users database. If it is not specified defaults to USERS|
 | USER_API_ENDPOINT|users api endpoint.If it is not specified defaults to http://localhost:8082|
 | BOOK_API_ENDPOINT|book api endpoint.  If it is not specified defaults to http://localhost:8080|
+| ORDER_API_ENDPOINT|order api endpoint.  If it is not specified defaults to http://localhost:8081|
+
