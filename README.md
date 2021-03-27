@@ -2,6 +2,8 @@
 
 A basic application to demonstrate the microservices architecture using books store management.
 
+![image](https://user-images.githubusercontent.com/26835951/112730281-c0d3d680-8f56-11eb-9cd3-07d1965db708.png)
+
 
 ## Users API
 | API | Method| Description |
