@@ -1,0 +1,30 @@
+{
+  "name": "microservices-using-nodejs-mongodb",
+  "version": "1.0.0",
+  "description": "Microservices Example",
+  "scripts": {
+    "test": "jest --forceExit  ",
+    "startbookserver": "node bookServer.js",
+    "startuserserver": "node userServer.js",
+    "startorderserver": "node orderServer.js"
+  },
+  "author": "Yogesh Bitake",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jest-config": "^26.6.3",
+    "mongoose": "^5.11.14",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.19.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.1.3",
+    "jest": "^26.6.3",
+    "supertest": "^6.1.3"
+  }
+}
