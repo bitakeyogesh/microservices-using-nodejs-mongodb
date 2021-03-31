@@ -1,0 +1,64 @@
+{
+	"info": {
+		"_postman_id": "69475ccc-73de-42e2-982e-5125117881a4",
+		"name": "Orders API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Place Order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"bookId\": \"7fceab9f-32a2-4e97-9190-21d8157d914c\",\r\n    \"userId\": 27,\r\n    \"orderedDate\": 9970129788,\r\n    \"deliveryDate\":\"Pune\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{ordersApiUrl}}/api/v1/order/add",
+					"host": [
+						"{{ordersApiUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"order",
+						"add"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "ordersApiUrl",
+			"value": "http://localhost:8081"
+		}
+	]
+}

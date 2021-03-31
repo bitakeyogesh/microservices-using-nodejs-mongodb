@@ -1,0 +1,479 @@
+{
+	"info": {
+		"_postman_id": "e9b4b9ef-bc37-486b-81d4-a8df026458d1",
+		"name": "Books API",
+		"description": "<h3> It is a collection of API's to perform CRUD operation to the book library system. \r\n</h3>",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Book",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"postman.setEnvironmentVariable(\"name\", \"A Promised Land\");\r",
+							"postman.setEnvironmentVariable(\"releaseDate\", \"2020-11-17\");\r",
+							"postman.setEnvironmentVariable(\"authorName\", \"Barack Obama\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"The Secret\",\r\n    \"releaseDate\": \"2020\",\r\n    \"authorName\": \"Priti Kokane Bitake\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{booksApiUrl}}/api/v1/book/add",
+					"host": [
+						"{{booksApiUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"book",
+						"add"
+					]
+				},
+				"description": "<h3>Add a book in the library with basic details like book name, release date and author name</h3>\r\n\r\n<b> Status Code (201) </b> :  Book record has been successfully created<br>\r\n<b> Status Code (422) </b> :  Indicates Invalid input parameters <br>\r\n<b> Status Code (500) </b> :  Indicates internal server error<br>"
+			},
+			"response": [
+				{
+					"name": "Add Book",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"{{name}}\",\r\n    \"releaseDate\": \"{{releaseDate}}\",\r\n    \"authorName\": \"{{authorName}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{booksApiUrl}}/api/v1/book/add",
+							"host": [
+								"{{booksApiUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"book",
+								"add"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "241"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"f1-s6B26YcuXOeJMBlB6FsrJBcM3GM\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 04 Feb 2021 15:42:40 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Record has been created successfully.\",\n    \"data\": {\n        \"_id\": \"601c15f0543489443040e0d7\",\n        \"uuid\": \"cee34ace-5c41-41f4-850b-a16034c456f9\",\n        \"name\": \"A Promised Land\",\n        \"releaseDate\": \"2020-11-17T00:00:00.000Z\",\n        \"authorName\": \"Barack Obama\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get All Books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{booksApiUrl}}/api/v1/books",
+					"host": [
+						"{{booksApiUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"books"
+					]
+				},
+				"description": "<h3>Fetch all the book records from the system</h3>\r\n\r\n<b> Status Code (200) </b> :  Fetched all records successfully <br>\r\n<b> Status Code (404) </b> :  No records found in the database <br>\r\n<b> Status Code (500) </b> :  Indicates internal server error<br>"
+			},
+			"response": [
+				{
+					"name": "Get All Books",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{booksApiUrl}}/api/v1/books",
+							"host": [
+								"{{booksApiUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"books"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "246"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"f6-1xLmMbHIzvzLv8VwDMDYIt4g4WM\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 04 Feb 2021 15:47:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Request has been processed successfully.\",\n    \"data\": [\n        {\n            \"_id\": \"601c15f0543489443040e0d7\",\n            \"uuid\": \"cee34ace-5c41-41f4-850b-a16034c456f9\",\n            \"name\": \"A Promised Land\",\n            \"releaseDate\": \"2020-11-17T00:00:00.000Z\",\n            \"authorName\": \"Barack Obama\",\n            \"__v\": 0\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get A Book By Id",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"postman.setEnvironmentVariable(\"uuid\", \"7fceab9f-32a2-4e97-9190-21d8157d914c\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{booksApiUrl}}/api/v1/book/{{uuid}}",
+					"host": [
+						"{{booksApiUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"book",
+						"{{uuid}}"
+					]
+				},
+				"description": "<h3>Fetch book details from the system by id</h3>\r\n\r\n<b> Status Code (200) </b> :  Fetched details of particular book successfully <br>\r\n<b> Status Code (404) </b> :  No records found in the database <br>\r\n<b> Status Code (500) </b> :  Indicates internal server error<br>"
+			},
+			"response": [
+				{
+					"name": "Get A Book By Id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{booksApiUrl}}/api/v1/book/cee34ace-5c41-41f4-850b-a16034c456f9",
+							"host": [
+								"{{booksApiUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"book",
+								"cee34ace-5c41-41f4-850b-a16034c456f9"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "244"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"f4-nXWmgpROMXtKjOoRipVtTBUEDGY\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 04 Feb 2021 15:50:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Request has been processed successfully.\",\n    \"data\": {\n        \"_id\": \"601c15f0543489443040e0d7\",\n        \"uuid\": \"cee34ace-5c41-41f4-850b-a16034c456f9\",\n        \"name\": \"A Promised Land\",\n        \"releaseDate\": \"2020-11-17T00:00:00.000Z\",\n        \"authorName\": \"Barack Obama\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Update A Book",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"postman.setEnvironmentVariable(\"name\", \"A Promised Land\");\r",
+							"postman.setEnvironmentVariable(\"releaseDate\", \"2020-11-17\");\r",
+							"postman.setEnvironmentVariable(\"authorName\", \"Barack H. Obama\");\r",
+							"postman.setEnvironmentVariable(\"uuid\", \"cee34ace-5c41-41f4-850b-a16034c456f9\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"{{name}}\",\r\n    \"releaseDate\": \"{{releaseDate}}\",\r\n    \"authorName\": \"{{authorName}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{booksApiUrl}}/api/v1/book/{{uuid}}",
+					"host": [
+						"{{booksApiUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"book",
+						"{{uuid}}"
+					]
+				},
+				"description": "<h3>Update details of a particular book based on uuid</h3>\r\n\r\n<b> Status Code (200) </b> :  Details of a particular book has been updated successfully <br>\r\n<b> Status Code (404) </b> :  No records found in the system for given uuid <br>\r\n<b> Status Code (500) </b> :  Indicates internal server error<br>"
+			},
+			"response": [
+				{
+					"name": "Update A Book",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"{{name}}\",\r\n    \"releaseDate\": \"{{releaseDate}}\",\r\n    \"authorName\": \"{{authorName}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{booksApiUrl}}/api/v1/book/{{uuid}}",
+							"host": [
+								"{{booksApiUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"book",
+								"{{uuid}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "247"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"f7-zYCxzzFsOsLV16nr+2vlHF76fkM\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 04 Feb 2021 15:59:44 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Request has been processed successfully.\",\n    \"data\": {\n        \"_id\": \"601c15f0543489443040e0d7\",\n        \"uuid\": \"cee34ace-5c41-41f4-850b-a16034c456f9\",\n        \"name\": \"A Promised Land\",\n        \"releaseDate\": \"2020-11-17T00:00:00.000Z\",\n        \"authorName\": \"Barack H. Obama\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete A Book",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"postman.setEnvironmentVariable(\"uuid\", \"cee34ace-5c41-41f4-850b-a16034c456f9\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{booksApiUrl}}/api/v1/book/{{uuid}}",
+					"host": [
+						"{{booksApiUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"book",
+						"{{uuid}}"
+					]
+				},
+				"description": "<h3>Delete details of a particular book based on uuid</h3>\r\n\r\n<b> Status Code (200) </b> :  Details of a particular book has been deleted successfully <br>\r\n<b> Status Code (404) </b> :  No records found in the system for given uuid <br>\r\n<b> Status Code (500) </b> :  Indicates internal server error<br>"
+			},
+			"response": [
+				{
+					"name": "Delete A Book",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{booksApiUrl}}/api/v1/book/{{uuid}}",
+							"host": [
+								"{{booksApiUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"book",
+								"{{uuid}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "54"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"36-9WGRRXATBi5XwT2G5kXjRB7Awy8\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 04 Feb 2021 16:17:21 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Request has been processed successfully.\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "booksApiUrl",
+			"value": "http://localhost:8080"
+		}
+	]
+}

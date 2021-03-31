@@ -1,0 +1,64 @@
+{
+	"info": {
+		"_postman_id": "779c02cd-d427-41d4-b66a-663aa69e1641",
+		"name": "Users API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Yogesh Bitake\",\r\n    \"age\": 27,\r\n    \"mobile\": 9970129788,\r\n    \"address\":\"Pune\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{usersApiUrl}}/api/v1/user/add",
+					"host": [
+						"{{usersApiUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"add"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "usersApiUrl",
+			"value": "http://localhost:8082"
+		}
+	]
+}
