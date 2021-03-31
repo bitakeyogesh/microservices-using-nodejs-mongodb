@@ -7,6 +7,7 @@ A basic application to demonstrate the microservices architecture using books st
 # Prerequisites before run the project 
 - install latest version of [nodejs](https://nodejs.org/en/download)
 - install latest version of [mongodb](https://www.mongodb.com/try/download/community?tck=docs_server)
+- Good to have [postman](https://www.postman.com/downloads/) installed to test the microservices.
 
 ## Commands
 
@@ -17,6 +18,10 @@ A basic application to demonstrate the microservices architecture using books st
 | npm run startorderserver|Starts order Server|
 | npm test unit | Starts unit tests |
 | npm test integration | Starts integration tests |
+
+# How to test
+import postman configuration file in postman and test.
+you can find the postman config here. https://github.com/bitakeyogesh/microservices-using-nodejs-mongodb/tree/main/postman
 
 ## Users API
 | API | Method| Description |
