@@ -20,8 +20,8 @@ A basic application to demonstrate the microservices architecture using books st
 | npm test integration | Starts integration tests |
 
 # How to test
-import postman configuration file in postman and test.
-you can find the postman config here. https://github.com/bitakeyogesh/microservices-using-nodejs-mongodb/tree/main/postman
+import postman collection in postman and test.
+you can find the postman collections here. https://github.com/bitakeyogesh/microservices-using-nodejs-mongodb/tree/main/postman
 
 ## Users API
 | API | Method| Description |
