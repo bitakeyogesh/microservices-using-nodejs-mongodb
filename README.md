@@ -2,6 +2,21 @@
 
 A basic application to demonstrate the microservices architecture using books store management.
 
+![image](https://user-images.githubusercontent.com/26835951/112730281-c0d3d680-8f56-11eb-9cd3-07d1965db708.png)
+
+# Prerequisites before run the project 
+- install latest version of [nodejs](https://nodejs.org/en/download)
+- install latest version of [mongodb](https://www.mongodb.com/try/download/community?tck=docs_server)
+
+## Commands
+
+| Name | Description |
+--- | --- |
+| npm run startuserserver | Starts user server |
+| npm run startbookserver| Starts book server|
+| npm run startorderserver|Starts order Server|
+| npm test unit | Starts unit tests |
+| npm test integration | Starts integration tests |
 
 ## Users API
 | API | Method| Description |
@@ -30,16 +45,6 @@ A basic application to demonstrate the microservices architecture using books st
 | /api/v1/order/:uuid |PUT| Update order by id |
 | /api/v1/order/:uuid |DELETE| Delete order by id |
 
-## Commands
-
-| Name | Description |
---- | --- |
-| npm run startuserserver | Starts user server |
-|npm run startbookserver| Starts book server|
-|npm run startorderserver|Starts order Server|
-| npm test unit | Starts unit tests |
-| npm test integration | Starts integration tests |
-
 # Environment Variables
 
 | Name | Description |
@@ -52,3 +57,5 @@ A basic application to demonstrate the microservices architecture using books st
 | USERS_API_DATABASE_NAME|Name of the users database. If it is not specified defaults to USERS|
 | USER_API_ENDPOINT|users api endpoint.If it is not specified defaults to http://localhost:8082|
 | BOOK_API_ENDPOINT|book api endpoint.  If it is not specified defaults to http://localhost:8080|
+| ORDER_API_ENDPOINT|order api endpoint.  If it is not specified defaults to http://localhost:8081|
+
